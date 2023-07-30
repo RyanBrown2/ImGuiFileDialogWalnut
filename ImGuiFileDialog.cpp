@@ -2310,7 +2310,7 @@ IGFD_API bool IGFD::FileManager::SelectDirectory(const std::shared_ptr<FileInfos
 IGFD_API void IGFD::FileManager::SelectFileName(const FileDialogInternal& vFileDialogInternal, const std::shared_ptr<FileInfos>& vInfos) {
     if (!vInfos.use_count()) return;
 
-    if (ImGui::IsKeyDown(ImGuiMod_Ctrl)) {
+    if (ImGui::IsKeyDown(ImGuiKey_LeftCtrl)) {
         if (puDLGcountSelectionMax == 0)  // infinite selection
         {
             if (prSelectedFileNames.find(vInfos->fileNameExt) == prSelectedFileNames.end())  // not found +> add
@@ -2330,7 +2330,7 @@ IGFD_API void IGFD::FileManager::SelectFileName(const FileDialogInternal& vFileD
                 }
             }
         }
-    } else if (ImGui::IsKeyDown(ImGuiMod_Shift)) {
+    } else if (ImGui::IsKeyDown(ImGuiKey_LeftShift)) {
         if (puDLGcountSelectionMax != 1) {
             prSelectedFileNames.clear();
             // we will iterate filelist and get the last selection after the start selection

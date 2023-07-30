@@ -1,4 +1,4 @@
-project "ImGuiFileDialog"
+project "ImGuiFileDialogWalnut"
 	kind "StaticLib"
 	language "C++"
 
